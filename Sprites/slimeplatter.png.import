@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/slimeplatter.png-1f469d560883c843c4f2d0cecf65ce24.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Sprites/slimeplatter.png"
+source_md5="88a4ba9b5c74d2b6532c3d8c1dbc219b"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="e98d9bb7134bfbd85e4454221ef47204"
+dest_files=[ "res://.import/slimeplatter.png-1f469d560883c843c4f2d0cecf65ce24.stex" ]
+dest_md5="4b804abde02da0c5f58c93a536ad668e"
 
 [params]
 

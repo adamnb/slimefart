@@ -7,7 +7,10 @@ path="res://.import/L2.png-d3daaacfe88ca23ab158a3ccea7ee2db.stex"
 [deps]
 
 source_file="res://Sprites/L2.png"
+source_md5="6fd74859af90dd442e290fddb5c60dd1"
+
 dest_files=[ "res://.import/L2.png-d3daaacfe88ca23ab158a3ccea7ee2db.stex" ]
+dest_md5="0f703af524ca0ac3d6ece074d666e101"
 
 [params]
 
