@@ -44,6 +44,10 @@ func _process(delta):
 	if (Input.is_action_just_released("kb_direction")):
 		print ("DIRECTION: ", prevDir)
 		print ("RELEASED! with a force of ", charge * maxForce)
+		
+		if charge > 0.25:
+			spt.flash()
+			
 		apply_impulse(Vector2(0, 0),
 			Vector2(prevDir.x * charge * maxForce, prevDir.y * charge * maxForce))
 		charge = 0

@@ -1,6 +1,10 @@
 extends Sprite
 
-var direction = Vector2(0, 0);
+var direction = Vector2(0, 0)
+
+export(bool) var flashing = false
+export(float) var flash_dur = 0.1
+var flash_curT = 0.0
 
 func _ready():
 	set_process(true)
@@ -26,3 +30,20 @@ func _process(delta):
 		region_rect.position.x = 96
 		
 	print (region_rect)
+	
+	if flashing:
+		flash_curT -= delta
+		region_rect.position.x = 108
+		
+		if flash_curT <= 0.0:
+			flashing = false
+	
+func flash():
+	flash_curT = flash_dur
+	flashing = true
+	
+	
+	
+	
+	
+	

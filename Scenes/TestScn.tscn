@@ -2,7 +2,7 @@
 
 [ext_resource path="res://Scripts/Player.gd" type="Script" id=1]
 [ext_resource path="res://Sprites/slime_8dir.png" type="Texture" id=2]
-[ext_resource path="res://Scenes/playerSprite.gd" type="Script" id=3]
+[ext_resource path="res://Scripts/playerSprite.gd" type="Script" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 
@@ -48,5 +48,7 @@ region_enabled = true
 region_rect = Rect2( 0, 0, 12, 12 )
 script = ExtResource( 3 )
 _sections_unfolded = [ "Region" ]
+flashing = false
+flash_dur = 0.1
 
 
