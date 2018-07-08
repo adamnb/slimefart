@@ -7,10 +7,7 @@ path="res://.import/slime_8dir.png-d52e28496a4b947b9cb60099c2333503.stex"
 [deps]
 
 source_file="res://Sprites/slime_8dir.png"
-source_md5="51e5e2f9e768f639a5e4a0ce2de7e36c"
-
 dest_files=[ "res://.import/slime_8dir.png-d52e28496a4b947b9cb60099c2333503.stex" ]
-dest_md5="b748f3eb7009b10e9ce912fb760eaa5d"
 
 [params]
 
