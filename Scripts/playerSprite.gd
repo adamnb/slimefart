@@ -28,8 +28,6 @@ func _process(delta):
 		region_rect.position.x = 84
 	else:
 		region_rect.position.x = 96
-		
-	print (region_rect)
 	
 	if flashing:
 		flash_curT -= delta

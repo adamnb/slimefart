@@ -2,35 +2,38 @@
 extends RigidBody2D
 
 var spt
+var chargeBar
+
+onready var windowSize = get_parent().windowSize
+var spriteSize = Vector2(0, 0)
+
+export(bool) var oobLoop = true # Loop to other side on out of bounds?
 
 export(float) var maxForce = 10.0
-var charge = 0
 export(float) var chargeRate = 0.5
+var charge = 0
 
 func _ready():
 	spt = $Sprite
+	chargeBar = $ChargeBar
+	
+	spriteSize = spt.region_rect.size
+	print (spriteSize)
 	set_process(true)
 #END _ready
 
 var prevDir = Vector2(0, 0) # Upon release, the current direction is almost always zero
 func _process(delta):
-	
 	# Direction
 	var dirx = 0
-	if Input.is_action_pressed("kb_left"): 
-		dirx = -1 
-	elif Input.is_action_pressed("kb_right"):
-		dirx = 1
-	else:
-		dirx = 0
+	if Input.is_action_pressed("kb_left"): dirx = -1;
+	elif Input.is_action_pressed("kb_right"): dirx = 1;
+	else: dirx = 0;
 		
 	var diry = 0
-	if Input.is_action_pressed("kb_up"): 
-		diry = -1 
-	elif Input.is_action_pressed("kb_down"):
-		diry = 1
-	else:
-		diry = 0
+	if Input.is_action_pressed("kb_up"): diry = -1;
+	elif Input.is_action_pressed("kb_down"): diry = 1;
+	else: diry = 0;
 	
 	var direction = Vector2(dirx, diry)
 	spt.direction = direction
@@ -51,12 +54,14 @@ func _process(delta):
 		print ("DIRECTION: ", prevDir)
 		print ("RELEASED! with a force of ", charge * maxForce)
 		
-		if charge > 0.25:
-			spt.flash()
+		if charge > 0.25: spt.flash();
 			
 		apply_impulse(Vector2(0, 0),
 			Vector2(prevDir.x * charge * maxForce, prevDir.y * charge * maxForce))
 		charge = 0
+	
+	#GUI
+	chargeBar.value = charge
 	
 	prevDir = direction
 #END _process
