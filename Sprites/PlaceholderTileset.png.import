@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/L2.png-d3daaacfe88ca23ab158a3ccea7ee2db.stex"
+path="res://.import/PlaceholderTileset.png-c7f9fd9b0d6c206f34eb879f93f6070f.stex"
 
 [deps]
 
-source_file="res://Sprites/L2.png"
-source_md5="6fd74859af90dd442e290fddb5c60dd1"
-
-dest_files=[ "res://.import/L2.png-d3daaacfe88ca23ab158a3ccea7ee2db.stex" ]
-dest_md5="0f703af524ca0ac3d6ece074d666e101"
+source_file="res://Sprites/PlaceholderTileset.png"
+dest_files=[ "res://.import/PlaceholderTileset.png-c7f9fd9b0d6c206f34eb879f93f6070f.stex" ]
 
 [params]
 
