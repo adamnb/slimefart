@@ -12,7 +12,7 @@ extents = Vector2( 7.5, 7.5 )
 custom_solver_bias = 0.0
 points = PoolVector2Array( -7.5, -7.5, 7.5, 7.5, -7.5, 7.5 )
 
-[node name="Tileset" type="Node" index="0"]
+[node name="Tileset" type="Node"]
 
 [node name="Block" type="Sprite" parent="." index="0"]
 

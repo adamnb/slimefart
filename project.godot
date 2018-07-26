@@ -17,8 +17,6 @@ config/icon="res://icon.png"
 
 [display]
 
-window/size/width=192
-window/size/height=192
 window/size/test_width=192
 window/size/test_height=192
 window/energy_saving/keep_screen_on=false
