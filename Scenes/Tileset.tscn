@@ -16,7 +16,6 @@ points = PoolVector2Array( -7.5, -7.5, 7.5, 7.5, -7.5, 7.5 )
 
 [node name="Block" type="Sprite" parent="." index="0"]
 
-editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 0, 0, 15, 15 )
@@ -37,15 +36,14 @@ audio_bus_name = "Master"
 shape = SubResource( 1 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="Angle2" type="Sprite" parent="." index="1"]
+[node name="Angle" type="Sprite" parent="." index="1"]
 
-editor/display_folded = true
 texture = ExtResource( 1 )
 region_enabled = true
 region_rect = Rect2( 15, 0, 15, 15 )
 _sections_unfolded = [ "Region", "Transform" ]
 
-[node name="Area2D" type="Area2D" parent="Angle2" index="0"]
+[node name="Area2D" type="Area2D" parent="Angle" index="0"]
 
 input_pickable = true
 gravity_vec = Vector2( 0, 1 )
@@ -55,7 +53,7 @@ angular_damp = 1.0
 audio_bus_override = false
 audio_bus_name = "Master"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Angle2/Area2D" index="0"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Angle/Area2D" index="0"]
 
 shape = SubResource( 2 )
 _sections_unfolded = [ "Transform" ]
