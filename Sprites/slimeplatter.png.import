@@ -7,7 +7,10 @@ path="res://.import/slimeplatter.png-1f469d560883c843c4f2d0cecf65ce24.stex"
 [deps]
 
 source_file="res://Sprites/slimeplatter.png"
+source_md5="88a4ba9b5c74d2b6532c3d8c1dbc219b"
+
 dest_files=[ "res://.import/slimeplatter.png-1f469d560883c843c4f2d0cecf65ce24.stex" ]
+dest_md5="4b804abde02da0c5f58c93a536ad668e"
 
 [params]
 

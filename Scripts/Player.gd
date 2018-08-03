@@ -4,7 +4,6 @@ extends RigidBody2D
 var spt
 var chargeBar
 
-onready var windowSize = get_parent().windowSize
 var spriteSize = Vector2(0, 0)
 
 export(bool) var oobLoop = true # Loop to other side on out of bounds?
@@ -19,11 +18,11 @@ func _ready():
 	
 	spriteSize = spt.region_rect.size
 	print (spriteSize)
-	set_process(true)
+	set_physics_process(true)
 #END _ready
 
 var prevDir = Vector2(0, 0) # Upon release, the current direction is almost always zero
-func _process(delta):
+func _physics_process(delta):
 	# Direction
 	var dirx = 0
 	if Input.is_action_pressed("kb_left"): dirx = -1;
