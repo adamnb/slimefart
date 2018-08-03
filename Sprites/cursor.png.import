@@ -1,0 +1,37 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/cursor.png-97af3808e5ea1d52e364c821589a41df.stex"
+
+[deps]
+
+<<<<<<< HEAD:Sprites/slimecube.png.import
+source_file="res://Sprites/slimecube.png"
+source_md5="d8c59769a4c2c5ca7c02ccb57cb5f2da"
+
+dest_files=[ "res://.import/slimecube.png-8084967010ac9cd3b2c192a2ac3cb520.stex" ]
+dest_md5="b22b033f0cb8566934a3efb2bde1c46a"
+=======
+source_file="res://Sprites/cursor.png"
+dest_files=[ "res://.import/cursor.png-97af3808e5ea1d52e364c821589a41df.stex" ]
+>>>>>>> 98438d3e7e81ce1f1cc3d162d809a947e91a0303:Sprites/cursor.png.import
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=false
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

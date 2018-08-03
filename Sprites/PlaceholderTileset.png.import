@@ -2,15 +2,12 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/slimecube.png-8084967010ac9cd3b2c192a2ac3cb520.stex"
+path="res://.import/PlaceholderTileset.png-c7f9fd9b0d6c206f34eb879f93f6070f.stex"
 
 [deps]
 
-source_file="res://Sprites/slimecube.png"
-source_md5="d8c59769a4c2c5ca7c02ccb57cb5f2da"
-
-dest_files=[ "res://.import/slimecube.png-8084967010ac9cd3b2c192a2ac3cb520.stex" ]
-dest_md5="b22b033f0cb8566934a3efb2bde1c46a"
+source_file="res://Sprites/PlaceholderTileset.png"
+dest_files=[ "res://.import/PlaceholderTileset.png-c7f9fd9b0d6c206f34eb879f93f6070f.stex" ]
 
 [params]
 

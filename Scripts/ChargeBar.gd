@@ -10,8 +10,6 @@ func _process(delta):
 	update()
 
 func _draw():
-	print ("draw")
-	
 	draw_rect(Rect2(0, 0, 4, 12), maskColor)
 	draw_rect(Rect2(1, 1, 2, 10 * value), barColor)
 	
