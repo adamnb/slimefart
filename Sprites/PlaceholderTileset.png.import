@@ -7,7 +7,10 @@ path="res://.import/PlaceholderTileset.png-c7f9fd9b0d6c206f34eb879f93f6070f.stex
 [deps]
 
 source_file="res://Sprites/PlaceholderTileset.png"
+source_md5="2ddbd66c659b910cdc53892cd64c3421"
+
 dest_files=[ "res://.import/PlaceholderTileset.png-c7f9fd9b0d6c206f34eb879f93f6070f.stex" ]
+dest_md5="fecf3dde21ae5166afcf3d8b8b2c156f"
 
 [params]
 
