@@ -1,15 +1,15 @@
-# TODO: Turn linear charging to exponential
 extends RigidBody2D
 
+# SPRITE ######################################################################
 var spt
-var chargeBar
-
 var spriteSize = Vector2(0, 0)
 
-export(bool) var oobLoop = true # Loop to other side on out of bounds?
-
+# CHARGING ####################################################################
+var chargeBar
 export(float) var maxForce = 10.0
-export(float) var chargeRate = 0.5
+export(float) var chargeRate = 0.5 # linear charge rate
+export(float) var exChargeRate = 2 # Exponential charge rate
+export(bool) var linear = false # Whether the charge progresses linearly or not
 var charge = 0
 
 func _ready():
@@ -22,6 +22,7 @@ func _ready():
 #END _ready
 
 var prevDir = Vector2(0, 0) # Upon release, the current direction is almost always zero
+var chargeTime = 0
 func _physics_process(delta):
 	# Direction
 	var dirx = 0
@@ -40,10 +41,15 @@ func _physics_process(delta):
 	# MOVEMENT
 	# - charging
 	if (Input.is_action_pressed("kb_direction")): # If any directional key is pressed
+		chargeTime += delta
 		if (charge < 1):
-			charge += chargeRate * delta
-			print ("Charging! ", charge)
-
+			
+			# Linear-exponential switch
+			if (linear):
+				charge += chargeRate * delta
+				
+			else: # Exponential charging over time
+				charge += pow(chargeTime, exChargeRate)	
 		else:
 			print ("Max charge reached!")
 			charge = 1
@@ -53,13 +59,15 @@ func _physics_process(delta):
 		print ("DIRECTION: ", prevDir)
 		print ("RELEASED! with a force of ", charge * maxForce)
 		
+		chargeTime = 0
+		
 		if charge > 0.25: spt.flash();
 			
 		apply_impulse(Vector2(0, 0),
 			Vector2(prevDir.x * charge * maxForce, prevDir.y * charge * maxForce))
 		charge = 0
 	
-	#GUI
+	# GUI
 	chargeBar.value = charge
 	
 	prevDir = direction

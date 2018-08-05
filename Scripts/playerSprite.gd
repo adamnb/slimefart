@@ -10,8 +10,6 @@ func _ready():
 	set_process(true)
 
 func _process(delta):
-	print (region_rect)
-	
 	if direction == Vector2(0, -1):
 		region_rect.position.x = 0
 	elif direction == Vector2(1, -1):
