@@ -1,5 +1,9 @@
 extends RigidBody2D
 
+# CONTROLS ####################################################################
+# TODO: Add Gamepad/Keyboard toggle
+var directionals = [0, 0, 0, 0] # Directional key states UDLR
+
 # SPRITE ######################################################################
 var spt
 var spriteSize = Vector2(0, 0)
@@ -12,6 +16,7 @@ export(float) var exChargeRate = 2 # Exponential charge rate
 export(bool) var linear = false # Whether the charge progresses linearly or not
 var charge = 0
 
+
 func _ready():
 	spt = $Sprite
 	chargeBar = $ChargeBar
@@ -19,21 +24,36 @@ func _ready():
 	spriteSize = spt.region_rect.size
 	print (spriteSize)
 	set_physics_process(true)
-#END _ready
+
 
 var prevDir = Vector2(0, 0) # Upon release, the current direction is almost always zero
 var chargeTime = 0
 func _physics_process(delta):
-	# Direction
+
+	# DIRECTION
 	var dirx = 0
-	if Input.is_action_pressed("kb_left"): dirx = -1;
-	elif Input.is_action_pressed("kb_right"): dirx = 1;
-	else: dirx = 0;
+	if Input.is_action_pressed("kb_left"): 
+		dirx = -1;  
+		directionals[2] = 1;
+	elif Input.is_action_pressed("kb_right"): 
+		dirx = 1; 
+		directionals[3] = 1;
+	else: 
+		dirx = 0;
+		directionals[2] = 0
+		directionals[3] = 0
 		
 	var diry = 0
-	if Input.is_action_pressed("kb_up"): diry = -1;
-	elif Input.is_action_pressed("kb_down"): diry = 1;
-	else: diry = 0;
+	if Input.is_action_pressed("kb_up"): 
+		diry = -1; 
+		directionals[0] = 1;
+	elif Input.is_action_pressed("kb_down"): 
+		diry = 1; 
+		directionals[1] = 1;
+	else: 
+		diry = 0;
+		directionals[0] = 0
+		directionals[1] = 0
 	
 	var direction = Vector2(dirx, diry)
 	spt.direction = direction
@@ -51,11 +71,10 @@ func _physics_process(delta):
 			else: # Exponential charging over time
 				charge += pow(chargeTime, exChargeRate)	
 		else:
-			print ("Max charge reached!")
 			charge = 1
 	
 	# - charge release
-	if (Input.is_action_just_released("kb_direction")): # When a directional key is released
+	if (directionals == [0, 0, 0, 0]):
 		print ("DIRECTION: ", prevDir)
 		print ("RELEASED! with a force of ", charge * maxForce)
 		
@@ -66,9 +85,7 @@ func _physics_process(delta):
 		apply_impulse(Vector2(0, 0),
 			Vector2(prevDir.x * charge * maxForce, prevDir.y * charge * maxForce))
 		charge = 0
-	
 	# GUI
 	chargeBar.value = charge
 	
 	prevDir = direction
-#END _process
