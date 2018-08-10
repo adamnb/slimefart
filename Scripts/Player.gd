@@ -15,7 +15,7 @@ var charge = 0
 
 func _ready():
 	spt = $Sprite
-	chargeBar = $ChargeBar
+	chargeBar = get_node("UILayer/ChargeBar")
 
 	spriteSize = spt.region_rect.size
 	print (spriteSize)
